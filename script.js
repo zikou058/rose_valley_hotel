@@ -42,7 +42,7 @@ const booknew  = () => {
 } 
 // fnt viewrooms btn :
 const viewrooms  = () => {
-    window.location.href = "contact_us.html";
+    window.location.href = "roms_prices1.html#chenckavailability1";
 }
 // fnt booknewsetbar : 
 const booknewsetbar  = () => {

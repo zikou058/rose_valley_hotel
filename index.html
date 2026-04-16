@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-
-<html lang="en"><head>
+<html lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Rose Valley Hotel Homepage</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="script.js" defer type="module"></script>
-<!-- ScriptConfig -->
 <script>
         tailwind.config = {
             darkMode: "class",
@@ -45,12 +44,13 @@
                 'GRAD' 0,
                 'opsz' 24
         }
+        /* زدتها فقط باش المنيو ميبانش حتى تورك على الزر */
+        #mobile-menu-list.hidden { display: none; }
     </style>
 </head>
 <body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
 <div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
 <div class="layout-container flex h-full grow flex-col">
-<!-- TopNavBar -->
 <header class="w-full px-4 sm:px-10 lg:px-20 py-3 bg-cover dark:bg-background-dark/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200/50 dark:border-white/10">
 <div class="mx-auto flex max-w-[1280px] items-center justify-between whitespace-nowrap">
 <div class="flex items-center gap-4 text-[#181311] dark:text-white">
@@ -62,6 +62,7 @@
 </div>
 <h2 class="text-[#181311] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Rose Valley Hotel</h2>
 </div>
+
 <div class="hidden lg:flex flex-1 justify-end items-center gap-8">
 <div class="flex items-center gap-9">
 <a class="text-primary dark:text-gray-300 dark:hover:text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="homepage.html">Home</a>
@@ -74,10 +75,25 @@
 <span class="truncate">Book Now</span>
 </button>
 </div>
+
+<button id="menu-btn" class="lg:hidden flex items-center p-2 text-[#181311]">
+    <span class="material-symbols-outlined text-3xl">menu</span>
+</button>
 </div>
 </header>
+<div id="mobile-menu" class="hidden lg:hidden flex-col bg-light dark:border-white/10 px-6 py-6 space-y-6">
+    <nav class="flex flex-col gap-5 text-lg font-medium text-[#181311] dark:text-white">
+        <a href="index.html" class="text-primary font-bold">Home</a>
+        <a href="roms_prices1.html" class="hover:text-primary">Rooms</a>
+        <a href="animation_&_location.html" class="hover:text-primary">Location</a>
+        <a href="guest_reviews.html" class="hover:text-primary">Reviews</a>
+        <a href="contact_us.html" class="hover:text-primary ">Contact</a>
+    </nav>
+    <button class="w-full rounded-lg bg-primary text-white py-3 font-bold">
+        Book Now
+    </button>
+</div>
 <main class="flex-1">
-<!-- HeroSection -->
 <section class="relative">
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
 <div class="flex min-h-[520px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-center justify-center p-8 text-center" data-alt="Stunning view of the hotel pool at sunset" style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCO16fVBTB5QyU186i578_AlFIv9dFHSh23xUdqJp9mxyqBOvz2DffjnEJRmABlQlie7jK3Jy5ObpeiZ5xZVSaofi3swv90TJDZxxsNSZAsuPbdxzUC-RFn0LLM4iT8RWHjVgmShHcHpGRdrXuqbXrtr3XvJhh9Gn6w_JiASjyB3mpxbj_rZM1cbAeEKUtULIXWKx5Pm4zNTZ-sA7U5LGWDsdn9MPQzwAKhsXxWf3tzP0nyFvVZ10UUPF0vL-RIebBv3tTcasNPaN0");'>
@@ -96,7 +112,6 @@
 </div>
 </div>
 </section>
-<!-- Booking Widget Section -->
 <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 -mt-24 relative z-10">
 <div class="bg-background-light dark:bg-background-dark shadow-xl rounded-xl p-6 md:p-8">
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-end gap-6">
@@ -122,7 +137,6 @@
 </div>
 </div>
 </section>
-<!-- About Section -->
 <section class="py-20 sm:py-24">
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 <div class="text-center max-w-3xl mx-auto">
@@ -163,7 +177,6 @@
 </div>
 </div>
 </section>
-<!-- Location Section -->
 <section class="pb-20 sm:pb-24">
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -180,7 +193,6 @@
 </div>
 </section>
 </main>
-<!-- Footer Section -->
 <footer class="bg-background-light dark:bg-background-dark border-t border-primary/20 mt-auto">
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
@@ -192,7 +204,7 @@
 <div>
 <h4 class="font-bold text-lg mb-4">Quick Links</h4>
 <ul class="space-y-2 text-sm">
-<li><a class="hover:text-primary transition-colors text-text-light/70 dark:text-text-dark/70" href="roms_prices1.html">Rooms &amp; Suites</a></li>
+<li><a class="hover:text-primary transition-colors text-text-light/70 dark:text-text-dark/70" href="roms_prices1.html">Rooms & Suites</a></li>
 <li><a class="hover:text-primary transition-colors text-text-light/70 dark:text-text-dark/70" href="">Restaurant</a></li>
 <li><a class="hover:text-primary transition-colors text-text-light/70 dark:text-text-dark/70" href="animation_&_location.html">Special Offers</a></li>
 <li><a class="hover:text-primary transition-colors text-text-light/70 dark:text-text-dark/70" href="contact_us.html">Contact Us</a></li>
@@ -207,7 +219,7 @@
 <a aria-label="Instagram" class="text-text-light/70 dark:text-text-dark/70 hover:text-primary transition-colors" href="https://www.instagram.com/ouarzazaterosevalley/">
 <svg class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"></path></svg>
 </a>
-<a aria-label="TripAdvisor" class="text-text-light/70 dark:text-text-dark/70 hover:text-primary transition-colors" href="#">
+<a aria-label="TripAdvisor" class="text-text-light/70 dark:text-text-dark/70 hover:text-primary transition-colors" href="https://www.tripadvisor.de/Hotel_Review-g304018-d12274548-Reviews-Rose_Valley_Hotel-Ouarzazate_Draa_Tafilalet.html">
 <svg class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 21.818c-3.364 0-6.273-1.545-8.182-4.182.818-1.545 2.182-2.455 3.545-2.727 1.091.909 2.455 1.545 4.636 1.545s3.545-.636 4.636-1.545c1.364.273 2.727 1.182 3.545 2.727-1.909 2.636-4.818 4.182-8.182 4.182zm-4.364-10.091c0 2.455 1.909 4.364 4.364 4.364s4.364-1.909 4.364-4.364c0-2.455-1.909-4.364-4.364-4.364s-4.364 1.909-4.364 4.364z"></path></svg>
 </a>
 </div>
@@ -220,4 +232,29 @@
 </footer>
 </div>
 </div>
+
+<script>
+    // Script dyal l-Menu Mobile
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+            
+            // Beddel icon mabin menu o close
+            const icon = menuBtn.querySelector('.material-symbols-outlined');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.textContent = 'menu';
+            } else {
+                icon.textContent = 'close';
+            }
+        });
+
+    burgerBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const icon = burgerBtn.querySelector('span');
+        icon.textContent = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
+    });
+</script>
 </body></html>
